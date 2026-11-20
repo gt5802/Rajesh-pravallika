@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#2e0810">
+<title>Wedding Invitation | Rajesh &amp; Pravallika</title>
+<meta property="og:title" content="Rajesh &amp; Pravallika | Wedding Invitation">
+<meta property="og:description" content="Join us on 10 December 2026 in Vijayawada.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Serif+Telugu&family=Pinyon+Script&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="home">
+<header class="valance">
+  <span class="mono">R &amp; P</span>
+  <a href="index.html" data-nav="home">Home</a>
+  <a href="details.html" data-nav="details">Details</a>
+  <a href="reception.html" data-nav="reception">Reception</a>
+</header>
+<div id="intro" role="dialog" aria-label="Invitation envelope">
+  <p class="lead">You are cordially invited</p>
+  <button id="envelope" aria-label="Open the invitation"><span class="seal">R&amp;P</span></button>
+  <p class="lead">Tap the envelope to open</p>
+</div>
+<main>
+  <p class="blessing">శ్రీరస్తు · శుభమస్తు · అవిఘ్నమస్తు</p>
+  <p class="lead" style="margin-top:1.5rem">Dear <span id="guest">Guest</span>,</p>
+  <h1 class="script">Rajesh &amp; Pravallika</h1>
+  <p>Thursday, 10 December 2026 &middot; Vijayawada</p>
+  <div class="rule"></div>
+  <p style="max-width:34rem;margin:auto">We solicit your presence with family and friends on the auspicious occasion of the marriage of our eldest son.</p>
+  <section class="guest-note" aria-labelledby="guest-note-heading">
+    <button class="guest-note-toggle" id="guest-note-toggle" type="button" aria-expanded="false" aria-controls="guest-note-content">
+      <span class="guest-note-glyph" aria-hidden="true">✧</span>
+      <span class="guest-note-heading-wrap">
+        <span class="guest-note-eyebrow">A little note for our loved ones</span>
+        <span class="guest-note-heading" id="guest-note-heading">You make our day complete</span>
+      </span>
+      <span class="guest-note-action" id="guest-note-action">Open your note <span aria-hidden="true">＋</span></span>
+    </button>
+    <div class="guest-note-content" id="guest-note-content" hidden>
+      <ol class="guest-note-steps" aria-hidden="true">
+        <li>Two families, one joyful beginning.</li>
+        <li>Your blessings make every moment brighter.</li>
+        <li>We can’t wait to celebrate with you!</li>
+      </ol>
+      <p class="sr-only" id="guest-note-status" role="status" aria-live="polite"></p>
+      <p class="guest-note-signoff" id="guest-note-signoff" hidden>With love, Rajesh &amp; Pravallika</p>
+    </div>
+  </section>
+  <div class="count" id="countdown" aria-live="off">
+    <div><b data-u="d" aria-hidden="true">00</b><span class="sr-only" data-readable-u="d">0 days</span><small aria-hidden="true">DAYS</small></div>
+    <div><b data-u="h" aria-hidden="true">00</b><span class="sr-only" data-readable-u="h">0 hours</span><small aria-hidden="true">HOURS</small></div>
+    <div><b data-u="m" aria-hidden="true">00</b><span class="sr-only" data-readable-u="m">0 minutes</span><small aria-hidden="true">MINUTES</small></div>
+    <div><b data-u="s" aria-hidden="true">00</b><span class="sr-only" data-readable-u="s">0 seconds</span><small aria-hidden="true">SECONDS</small></div>
+  </div>
+  <a class="btn" href="details.html">View details</a>
+  <a class="btn ghost" href="reception.html">Reception invitation</a>
+</main>
+<footer>With best compliments from: Near &amp; Dear</footer>
+<script src="script.js"></script>
+</body></html>

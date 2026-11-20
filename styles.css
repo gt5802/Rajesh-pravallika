@@ -1,0 +1,116 @@
+/* ===== Tokens ===== */
+:root{
+  --oxblood:#2e0810; --velvet:#6b1426; --velvet-hi:#9a2a3c;
+  --gold:#c9a14a; --gold-lt:#ead594; --gold-dk:#8f6b25;
+  --cream:#f3e6c9; --plum:#5b1a3a; --ink:#f5e9d0;
+  --script:'Pinyon Script',cursive; --serif:'Cormorant Garamond',Georgia,serif; --te:'Noto Serif Telugu',serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{min-height:100dvh;font-family:var(--serif);font-size:1.15rem;line-height:1.6;color:var(--ink);
+  background:
+   repeating-linear-gradient(90deg,rgba(0,0,0,.28) 0 2px,transparent 2px 70px,rgba(255,255,255,.04) 70px 72px,transparent 72px 140px),
+   linear-gradient(180deg,var(--velvet-hi),var(--velvet) 45%,var(--oxblood));
+  background-attachment:fixed;padding-top:96px}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold-lt);outline-offset:3px}
+
+/* ===== Valance + nav ===== */
+.valance{position:fixed;inset:0 0 auto 0;height:78px;z-index:20;
+  background:linear-gradient(180deg,var(--gold-lt),var(--gold) 6px,var(--velvet-hi) 7px,var(--velvet));
+  border-bottom:2px solid var(--gold);
+  -webkit-mask:radial-gradient(circle at 30px 100%,transparent 0 0) ,none;
+  box-shadow:0 8px 24px rgba(0,0,0,.45);
+  display:flex;align-items:center;justify-content:center;gap:clamp(1rem,4vw,3rem);padding:6px 1rem 0}
+.valance a{text-decoration:none;font-size:1rem;letter-spacing:.18em;padding:.5rem .25rem;border-bottom:1px solid transparent}
+.valance a:hover,.valance a[aria-current]{border-color:var(--gold-lt);color:var(--gold-lt)}
+.valance .mono{font-family:var(--script);font-size:1.7rem;letter-spacing:0;color:var(--gold-lt);margin-right:auto}
+
+/* ===== Layout ===== */
+main{max-width:980px;margin:0 auto;padding:2rem 1.25rem 4rem;text-align:center}
+.blessing{font-family:var(--te);color:var(--gold-lt);font-size:1rem}
+.script{font-family:var(--script);font-weight:400;color:var(--ink);line-height:1.1}
+h1.script{font-size:clamp(3.4rem,13vw,7rem);margin:.4rem 0}
+h2.script{font-size:clamp(2.4rem,8vw,3.8rem);margin-bottom:1rem}
+.lead{font-style:italic;color:var(--gold-lt)}
+.rule{width:150px;height:1px;margin:1.4rem auto;background:linear-gradient(90deg,transparent,var(--gold),transparent);position:relative}
+.rule::after{content:"";position:absolute;left:50%;top:-4px;width:8px;height:8px;background:var(--gold);transform:translateX(-50%) rotate(45deg)}
+
+/* ===== Heartfelt guest note ===== */
+.guest-note{max-width:590px;margin:2rem auto 1rem;border:1px solid rgba(234,213,148,.65);border-radius:18px;
+  background:linear-gradient(135deg,rgba(107,20,38,.85),rgba(46,8,16,.9));box-shadow:0 12px 32px rgba(0,0,0,.24);
+  text-align:left;overflow:hidden}
+.guest-note-toggle{width:100%;display:flex;align-items:center;gap:1rem;padding:1rem 1.15rem;border:0;background:transparent;
+  color:var(--ink);font:inherit;text-align:left;cursor:pointer}
+.guest-note-glyph{flex:none;color:var(--gold-lt);font-size:2rem;line-height:1;transition:transform .35s ease}
+.is-thinking .guest-note-glyph{animation:note-breathe 1.6s ease-in-out infinite}
+.is-settled .guest-note-glyph{transform:rotate(45deg);color:var(--gold)}
+.guest-note-heading-wrap{display:grid;gap:.1rem;flex:1}
+.guest-note-eyebrow{font-size:.77rem;letter-spacing:.13em;text-transform:uppercase;color:var(--gold-lt)}
+.guest-note-heading{font-size:1.2rem}
+.guest-note-action{flex:none;color:var(--gold-lt);font-size:.88rem}
+.guest-note-action span{font-size:1.1em}
+.guest-note-content{padding:0 1.5rem 1.25rem 4.1rem}
+.guest-note-steps{list-style:none;padding:0;margin:0}
+.guest-note-steps li{opacity:0;transform:translateY(7px);max-height:0;overflow:hidden;color:var(--cream);
+  transition:opacity .45s ease,transform .45s ease,max-height .45s ease}
+.guest-note-steps li+li{margin-top:.45rem}
+.guest-note-steps li.is-visible{opacity:1;transform:none;max-height:4rem}
+.guest-note-steps li::before{content:"✦";color:var(--gold);font-size:.75em;margin-right:.65rem}
+.guest-note-signoff{margin-top:.8rem;color:var(--gold-lt);font-family:var(--script);font-size:1.65rem;line-height:1.2}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@keyframes note-breathe{50%{transform:scale(1.16);filter:drop-shadow(0 0 8px rgba(234,213,148,.75))}}
+
+/* ===== Cream paper cards ===== */
+.card{background:var(--cream);color:var(--plum);border-radius:18px;padding:1.75rem 1.5rem;
+  border:1px solid var(--gold);box-shadow:0 18px 40px rgba(0,0,0,.45),inset 0 0 0 5px var(--cream),inset 0 0 0 6px rgba(201,161,74,.5);text-align:center}
+.card h3{font-size:1.7rem;font-weight:500;margin-bottom:.25rem}
+.card .time{font-size:2.2rem;font-weight:600}
+.card p{font-style:italic}
+.grid{display:grid;gap:1.25rem;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin-top:2rem}
+
+/* ===== Countdown ===== */
+.count{display:flex;justify-content:center;gap:clamp(.75rem,4vw,2rem);margin:1.5rem 0}
+.count div{min-width:64px}
+.count b{display:flex;justify-content:center;gap:.025em;font-size:clamp(2.2rem,8vw,3.4rem);font-weight:500;
+  font-variant-numeric:tabular-nums;line-height:1.1}
+.count-digit{display:block;width:.64em;height:1.1em;overflow:hidden;mask-image:linear-gradient(to bottom,transparent,black 18%,black 82%,transparent)}
+.count-strip{display:block;transition:transform .65s cubic-bezier(.2,.8,.2,1);will-change:transform}
+.count-numeral{display:block;height:1.1em;line-height:1.1em}
+.count small{font-size:.85rem;letter-spacing:.2em;color:var(--gold-lt)}
+
+/* ===== Buttons + form ===== */
+.btn{display:inline-block;margin:.4rem;padding:.75rem 1.6rem;border-radius:999px;border:1px solid var(--gold);
+  background:linear-gradient(180deg,var(--gold-lt),var(--gold) 55%,var(--gold-dk));color:var(--oxblood);
+  font:600 1.05rem var(--serif);letter-spacing:.08em;text-decoration:none;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--gold-lt)}
+form{text-align:left;max-width:520px;margin:0 auto}
+label{display:block;margin:1rem 0 .25rem;font-weight:600}
+input,select,textarea{width:100%;padding:.7rem .9rem;border-radius:10px;border:1px solid var(--gold-dk);
+  background:#fffaf0;color:var(--plum);font:inherit}
+.row{display:flex;gap:1.25rem;flex-wrap:wrap}.row label{display:flex;gap:.5rem;align-items:center;font-weight:400}
+.row input{width:auto}
+.hide{display:none}
+footer{padding:2rem 1rem 3rem;text-align:center;color:var(--gold-lt);font-style:italic}
+
+/* ===== Envelope intro (home only) ===== */
+#intro{position:fixed;inset:0;z-index:50;background:var(--oxblood);display:grid;place-content:center;justify-items:center;gap:1.5rem;
+  text-align:center;transition:opacity 1s ease,visibility 1s}
+#intro.gone{opacity:0;visibility:hidden}
+#envelope{all:unset;cursor:pointer;position:relative;width:min(300px,78vw);aspect-ratio:3/2;
+  background:linear-gradient(160deg,#7a1a2e,#4a0e1b);box-shadow:0 20px 50px #000;border-radius:4px;transition:transform .8s}
+#envelope::before{content:"";position:absolute;inset:0;background:linear-gradient(to bottom right,transparent 49.5%,rgba(0,0,0,.35) 50%) top left/50% 100% no-repeat,
+  linear-gradient(to bottom left,transparent 49.5%,rgba(0,0,0,.35) 50%) top right/50% 100% no-repeat;
+  clip-path:polygon(0 0,100% 0,50% 62%);transform-origin:top;transition:transform .8s}
+#envelope .seal{position:absolute;left:50%;top:58%;translate:-50% -50%;width:74px;height:74px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,#a4814e,#6a4d27);display:grid;place-items:center;
+  font:1.9rem var(--script);color:#f0dcae;box-shadow:0 3px 8px #000a;animation:pulse 2.4s ease-in-out infinite;z-index:2}
+#envelope.open::before{transform:rotateX(180deg)}
+#envelope.open{transform:translateY(40px) scale(.9)}
+#envelope.open .seal{opacity:0;transition:opacity .4s}
+@keyframes pulse{50%{transform:scale(1.07)}}
+
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+@media (max-width:520px){.valance a{font-size:.85rem;letter-spacing:.08em}.valance .mono{font-size:1.4rem}
+  .guest-note-toggle{gap:.65rem;padding:.9rem}.guest-note-eyebrow{font-size:.68rem;letter-spacing:.08em}
+  .guest-note-heading{font-size:1.05rem}.guest-note-action{font-size:.76rem}.guest-note-content{padding:0 1rem 1rem 3.4rem}}
